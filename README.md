@@ -23,11 +23,12 @@ This API is designed for managing appointments within a healthcare system. It su
 
 2. **Install Dependencies**:
     Install Dependencies
+     npm install
 
 3.Environment Variables: Create a .env file in the root directory with the following:
-    PORT=5000
-    MONGO_URI=<your-mongodb-uri>
-    JWT_SECRET=<your-secret-key>
+    -- PORT=5000
+    -- MONGO_URI=<your-mongodb-uri>
+    -- JWT_SECRET=<your-secret-key>
 
 4.Start the Server:
     npm start
