@@ -2,6 +2,10 @@
 
 This API is designed for managing appointments within a healthcare system. It supports Patients, Doctors, and Admins with role-based access control for scheduling, viewing, updating, and deleting appointments.
 
+# Postman collection api link
+
+https://grey-escape-471381.postman.co/workspace/Gmail-%2F-Intelliveer-Workspace~d480b54a-752d-4a1d-9545-076fcc7f1081/collection/11843103-ceff9b8d-4ac8-481a-84ff-33b83d3db900?action=share&creator=11843103
+
 ## Features
 - **Role-Based Access Control**:
   - **Patients** can schedule, view, update, and delete their own appointments.
