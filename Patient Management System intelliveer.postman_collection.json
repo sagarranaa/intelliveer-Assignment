@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "ceff9b8d-4ac8-481a-84ff-33b83d3db900",
+		"name": "Patient Management System intelliveer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11843103"
+	},
+	"item": [
+		{
+			"name": "/api/users/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Sagar Rana\",\r\n  \"email\": \"Sagar.doe@example.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"Patient\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
+				"description": "/api/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"Sagar.doe@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODYwZjQzOGNiMjY0MTRmZDM5OGE5MSIsImlhdCI6MTczNjg0MDMxOSwiZXhwIjoxNzM2OTI2NzE5fQ.ZBCPU5BFwzlEAurwAor5E8-jIPPXH-X_dt7iF1BxDzM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Patient Admin Only",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODc0YjJhODEzYTRlMzEwMjExNmJlMSIsImlhdCI6MTczNjkxOTg5MCwiZXhwIjoxNzM3MDA2MjkwfQ.A8zMbwmMWskHVDTIsCfmeUiME7vUgPNI0mE-oaBZR7Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jane Smith\",\r\n  \"age\": 30,\r\n  \"contactInfo\": \"jane@example.com\",\r\n  \"doctorId\": \"67860f438cb26414fd398a91\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Patient (Admin or Own Patient)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODc0YjJhODEzYTRlMzEwMjExNmJlMSIsImlhdCI6MTczNjkxOTg5MCwiZXhwIjoxNzM3MDA2MjkwfQ.A8zMbwmMWskHVDTIsCfmeUiME7vUgPNI0mE-oaBZR7Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jane Smith\",\r\n  \"age\": 31\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/patients/67874cc0813a4e3102116bf0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"patients",
+						"67874cc0813a4e3102116bf0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an Appointment (Patient Only)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODYxMmEyOGNiMjY0MTRmZDM5OGFhMiIsImlhdCI6MTczNjkyMDk0MywiZXhwIjoxNzM3MDA3MzQzfQ.IBBt7JEPniInJIZAerp4YM_cHeEQWyv4Jnc0VLmCLmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"doctor\": \"67860f438cb26414fd398a91\",\r\n  \"date\": \"2025-01-20T10:00:00Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Appointments (Doctor or Admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODc0YjJhODEzYTRlMzEwMjExNmJlMSIsImlhdCI6MTczNjkyMTAzOSwiZXhwIjoxNzM3MDA3NDM5fQ.jNji8fEJJifCHgiev0nspdyqEJFLqB_mJrl0OHyDnMc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Appointment Status (Doctor Only)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODYwZjQzOGNiMjY0MTRmZDM5OGE5MSIsImlhdCI6MTczNjkyMTU0NCwiZXhwIjoxNzM3MDA3OTQ0fQ.RItGE09Zh9oO0NSYWs_6UWv180id5d-lZwrWa-FYt-Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"appointmentId\": \"67874f81813a4e3102116bfc\",\r\n  \"status\": \"Completed\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/appointments/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"appointments",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
